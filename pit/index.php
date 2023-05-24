@@ -27,15 +27,15 @@
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
         $bairro = $_POST['endereco'];
-
+        $cpf = $_POST['cpf'];
         $host = 'localhost';
         $user = 'root';
-        $pass = '';
+        $pass = 'pedro';
         $dbname = 'pit';
 
         $conn = mysqli_connect($host,$user,$pass,$dbname);
 
-        $sql = "INSERT INTO usuario(nome,senha,email,telefone,sexo) VALUES('$nome','$senha','$email','$telefone','$sexo','$data_nasc')";
+        $sql = "INSERT INTO usuario(nome,senha,email,telefone,sexo,cpf) VALUES('$nome','$senha','$email','$telefone','$sexo','$data_nasc', '$cpf')";
         mysqli_query($conn,$sql);
 
         $sql = "INSERT INTO endereco(cidade,estado,bairro) VALUES ('$cidade','$estado','$bairro')";
@@ -77,6 +77,12 @@
                 <div class="inputBox">
                 <label for="email" class="labelInput">Email</label>
                     <input type="text" name="email" id="email" class="inputUser" required>
+                    
+                </div>
+                <br><br>
+                <div class="inputBox">
+                <label for="cpf" class="labelInput">CPF</label>
+                    <input type="number" name="cpf" id="cpf" class="inputUser" required>
                     
                 </div>
                 <br><br>

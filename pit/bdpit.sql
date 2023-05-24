@@ -3,15 +3,13 @@ use pit;
 
 create table usuario(
 usuario_id int primary key auto_increment,
-nome varchar(30) not null,
-sobrenome varchar(100) not null,
+nome varchar(300) not null,
 email varchar(100) not null,
 senha int not null,
-fk_endereco int not null,
 cpf char(14) not null,
 sexo varchar(30) not null,
 telefone char(15) not null,
-foreign key (fk_endereco) references endereco(endereco_id)
+data_nasc date not null
 );
 
 create table endereco(
